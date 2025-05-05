@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/hsmain"
+    tools:context=".MoodFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/textView8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="How are you feeling now?"
+            android:textColor="@color/lesswhite"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/mood_joy"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/mood_joy"
+            app:layout_constraintEnd_toStartOf="@+id/mood_content"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <ImageView
+            android:id="@+id/mood_content"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/mood_contentment"
+            app:layout_constraintEnd_toStartOf="@+id/mood_sad"
+            app:layout_constraintStart_toEndOf="@+id/mood_joy"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <ImageView
+            android:id="@+id/mood_sad"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/mood_sadness"
+            app:layout_constraintEnd_toStartOf="@+id/mood_anxiety"
+            app:layout_constraintStart_toEndOf="@+id/mood_content"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <ImageView
+            android:id="@+id/mood_anxiety"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="7dp"
+            android:src="@drawable/mood_anxiety"
+            app:layout_constraintEnd_toStartOf="@+id/mood_anger"
+            app:layout_constraintStart_toEndOf="@+id/mood_sad"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <ImageView
+            android:id="@+id/mood_anger"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:src="@drawable/mood_anger"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/mood_anxiety"
+            app:layout_constraintTop_toBottomOf="@+id/textView8" />
+
+        <Button
+            android:id="@+id/mood_submit"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="20dp"
+            android:backgroundTint="@color/hspurp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Submit"
+            android:textColor="@color/lesswhite"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView15" />
+
+        <EditText
+            android:id="@+id/mood_note_input"
+            android:layout_width="0dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:ems="10"
+            android:fontFamily="@font/poppins_regular"
+            android:hint="What's on your mind?"
+            android:inputType="text|textMultiLine"
+            android:maxLines="5"
+            android:padding="16dp"
+            android:textColor="@color/white"
+            android:textColorHint="#A19BA9"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mood_submit" />
+
+        <Button
+            android:id="@+id/save_note_button"
+            android:layout_width="wrap_content"
+            android:layout_height="55dp"
+            android:layout_marginTop="22dp"
+            android:backgroundTint="@color/hspurp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Save note"
+            android:textColor="@color/lesswhite"
+            android:textSize="14sp"
+            android:visibility="gone"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/mood_note_input" />
+
+        <!-- NestedScrollView added for scrolling notes -->
+        <TextView
+            android:id="@+id/tv_notes_col"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="4dp"
+            android:fontFamily="@font/poppins_bold"
+            android:text="Your Collection of Notes"
+            android:textColor="@color/lesswhite"
+            android:textSize="17sp"
+            android:textStyle="bold"
+            android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/nestedScrollView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/save_note_button" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/nestedScrollView"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="1dp"
+            android:layout_marginEnd="10dp"
+            android:clipToPadding="false"
+            android:fillViewport="true"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_notes_col">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/notes_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:nestedScrollingEnabled="false"
+                android:overScrollMode="always"
+                android:paddingBottom="20dp" />
+
+        </androidx.core.widget.NestedScrollView>
+
+        <TextView
+            android:id="@+id/textView13"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="JOY"
+            android:textAlignment="center"
+            android:textColor="@color/lesswhite"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/mood_joy"
+            app:layout_constraintStart_toStartOf="@+id/mood_joy"
+            app:layout_constraintTop_toBottomOf="@+id/mood_joy" />
+
+        <TextView
+            android:id="@+id/textView14"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="PLEASED"
+            android:textAlignment="center"
+            android:textColor="@color/lesswhite"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/mood_content"
+            app:layout_constraintStart_toStartOf="@+id/mood_content"
+            app:layout_constraintTop_toBottomOf="@+id/mood_content" />
+
+        <TextView
+            android:id="@+id/textView15"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="SAD"
+            android:textAlignment="center"
+            android:textColor="@color/lesswhite"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/mood_sad"
+            app:layout_constraintStart_toStartOf="@+id/mood_sad"
+            app:layout_constraintTop_toBottomOf="@+id/mood_sad" />
+
+        <TextView
+            android:id="@+id/textView16"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="ANXIOUS"
+            android:textAlignment="center"
+            android:textColor="@color/lesswhite"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/mood_anxiety"
+            app:layout_constraintStart_toStartOf="@+id/mood_anxiety"
+            app:layout_constraintTop_toBottomOf="@+id/mood_anxiety" />
+
+        <TextView
+            android:id="@+id/textView17"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:fontFamily="@font/poppins_semi_bold"
+            android:text="ANGRY"
+            android:textAlignment="center"
+            android:textColor="@color/lesswhite"
+            android:textSize="11sp"
+            app:layout_constraintEnd_toEndOf="@+id/mood_anger"
+            app:layout_constraintStart_toStartOf="@+id/mood_anger"
+            app:layout_constraintTop_toBottomOf="@+id/mood_anger" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</FrameLayout>
