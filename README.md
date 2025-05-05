@@ -57,7 +57,7 @@ Welcome to **HealSpace**, an Android-based mental wellness app designed to help 
 
 > ⚠️ **Disclaimer**: This app uses **SharedPreferences** for local storage. While it ensures smooth performance, saved data may be cleared when the app is uninstalled or on some device resets. Future versions may integrate cloud sync for better persistence.
 
-👉 [**Download APK**]([link-to-apk](https://github.com/divya-dev24/HealSpace/releases/download/v1.0.0/app-debug.apk)) 
+👉 [**Download APK**](https://github.com/divya-dev24/HealSpace/releases/download/v1.0.0/app-debug.apk)
 
 ---
 
