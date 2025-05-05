@@ -106,6 +106,7 @@ This project was developed as a final year individual submission and is currentl
 ## 💌 Credits
 
 Developed with 💜 by Divya .R
+
 From logic to layout, bugs to beauty—crafted with patience, persistence, and purple.
 
 Special thanks to:
